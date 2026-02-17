@@ -31,5 +31,5 @@ Best case: Target is near the start → minimal exploration
 Worst case: Target is far or blocked → large portion of grid explored
 
 <img width="644" height="560" alt="image" src="https://github.com/user-attachments/assets/5316668d-60c3-4ea6-bf53-f10670a2c2c0" />
-
+<img width="1271" height="179" alt="image" src="https://github.com/user-attachments/assets/d0aad8d6-59d1-493f-bae5-1e7f7cfa70d0" />
 
