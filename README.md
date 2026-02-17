@@ -3,7 +3,6 @@ AI Pathfinder – Uninformed Search in Grid Environment
 This project implements and visualizes six uninformed search algorithms in a grid-based environment.
 The goal is to demonstrate how each algorithm explores the map step-by-step while navigating from a Start node (S) to a Target node (T) while avoiding walls.
 The visualization is created using Matplotlib and shows:
-Frontier nodes (waiting to be explored)
 Explored nodes (already visited)
 Final successful path
 Real-time animation of the search process
@@ -30,4 +29,7 @@ Best-Case and Worst-Case Testing
 Each algorithm was tested in:
 Best case: Target is near the start → minimal exploration
 Worst case: Target is far or blocked → large portion of grid explored
-Screenshots of these scenarios are included in the project report PDF.
+
+<img width="644" height="560" alt="image" src="https://github.com/user-attachments/assets/5316668d-60c3-4ea6-bf53-f10670a2c2c0" />
+
+
