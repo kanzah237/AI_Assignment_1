@@ -5,26 +5,26 @@ import time
 from collections import deque
 import heapq
 
-# grid setup
+# Grid constants
 ROWS, COLS = 10, 10
 START = (7, 1)
 TARGET = (5, 7)
 
-# 0 = empty, 1 = wall
+# Static walls
 walls = {(1,5),(2,5),(3,5),(4,5),(5,5),(6,5)}
 
-# Clockwise movement order
+# clockwise movement order
 MOVES = [
-    (-1, 0),  # Up
-    (0, 1),   # Right
-    (1, 0),   # Bottom
-    (1, 1),   # Bottom‑Right
-    (0, -1),  # Left
-    (-1, -1)  # Top‑Left
+    (-1, 0),  # up
+    (0, 1),   # right
+    (1, 0),   # bottom
+    (1, 1),   # bottom-right
+    (0, -1),  # left
+    (-1, -1)  # top-left
 ]
 
 
-# help
+# check conditions
 
 def in_bounds(r, c):
     return 0 <= r < ROWS and 0 <= c < COLS
@@ -49,7 +49,8 @@ def reconstruct_path(parent, end):
     return path[::-1]
 
 
-# grid to be shown
+# intialise grid
+
 def draw_grid(frontier=set(), explored=set(), path=[]):
     grid = np.zeros((ROWS, COLS))
 
@@ -73,12 +74,11 @@ def draw_grid(frontier=set(), explored=set(), path=[]):
 
     plt.clf()
     plt.imshow(grid)
-    plt.title("AI Pathfinder")
+    plt.title("Uninformed Search Visualization")
     plt.pause(0.15)
 
 
 # bfs
-
 def bfs():
     visited = set([START])
     queue = deque([START])
@@ -125,7 +125,7 @@ def dfs():
     return []
 
 
-#ucs
+# ucs
 
 def ucs():
     pq = [(0, START)]
@@ -190,7 +190,7 @@ def iddfs(max_depth=20):
     return []
 
 
-# Bidirectional
+# bidirectional
 
 def bidirectional():
     q_start = deque([START])
@@ -230,7 +230,6 @@ def bidirectional():
     else:
         return []
 
-    # reconstruct full path
     path_start = []
     n = meet
     while n in parent_start:
@@ -253,9 +252,7 @@ def bidirectional():
 if __name__ == "__main__":
     plt.figure()
 
-    print("Choose Algorithm:")
     print("1 = BFS | 2 = DFS | 3 = UCS | 4 = DLS | 5 = IDDFS | 6 = Bidirectional")
-
     choice = input("Enter choice: ")
 
     if choice == "1":
@@ -271,7 +268,6 @@ if __name__ == "__main__":
     elif choice == "6":
         path = bidirectional()
     else:
-        print("Invalid choice")
         path = []
 
     draw_grid(path=path)
